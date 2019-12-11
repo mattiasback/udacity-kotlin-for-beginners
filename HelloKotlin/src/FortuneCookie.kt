@@ -1,10 +1,9 @@
 fun main(args: Array<String>)
 {
-    var fortune: String
-    for (i in 1..10) {
+    var fortune: String = ""
+    while(!fortune.contains("Take it easy")) {
         fortune = getFortune(getBirthday())
         println("\nYour fortune is: $fortune")
-        if (fortune.contains("Take it easy")) break;
     }
 }
 
@@ -27,7 +26,7 @@ fun getFortune(birthday: Int) : String
     val index = when (birthday)
     {
         in 1..7 -> 4
-        28, 31 -> 2
+        28, 31 -> 5
         else -> birthday.rem(fortunes.size)
     }
     return fortunes[index]
