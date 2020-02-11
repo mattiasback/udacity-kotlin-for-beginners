@@ -25,7 +25,7 @@ fun getStartWithCEndWithE(spices: List<String>) : List<String>
 fun getFirstThreeStartsWithC(spices: List<String>) : List<String>
 {
     //End index is exclusive in sublist
-    return spices.subList(0, 3).filter { s -> s.startsWith('c')}
+    return spices.subList(0, 3).filter { s -> s.startsWith('c') }
 }
 
 fun getFirstThreeStartsWithC2(spices: List<String>) : List<String>
