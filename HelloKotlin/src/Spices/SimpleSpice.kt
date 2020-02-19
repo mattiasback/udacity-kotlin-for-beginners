@@ -1,4 +1,4 @@
-package Spices
+package spices
 
 fun main(args: Array<String>)
 {
@@ -6,13 +6,13 @@ fun main(args: Array<String>)
     println(spice.name + " has a heat of " + spice.heat)
 
     val spices = listOf(
-        Spice("curry") ,
-        Spice("pepper"),
-        Spice("cayenne", "hot"),
-        Spice("ginger"),
-        Spice("red curry", "hot"),
-        Spice("green curry", "hot"),
-        Spice("red pepper"),
+        Spice2("curry") ,
+        Spice2("pepper"),
+        Spice2("cayenne", "hot"),
+        Spice2("ginger"),
+        Spice2("red curry", "hot"),
+        Spice2("green curry", "hot"),
+        Spice2("red pepper"),
         makeSalt())
 
     val spicy = spices.filter { s -> s.heat > 5 }
@@ -38,7 +38,7 @@ class SimpleSpice()
         get() = 5
 }
 
-class Spice(val name: String, val spiciness: String = "mild")
+class Spice2(val name: String, val spiciness: String = "mild")
 {
     val heat: Int
         get()
@@ -60,5 +60,5 @@ class Spice(val name: String, val spiciness: String = "mild")
     }
 }
 
-fun makeSalt() = Spice("Salt")
+fun makeSalt() = Spice2("Salt")
 

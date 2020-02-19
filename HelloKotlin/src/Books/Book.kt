@@ -1,8 +1,4 @@
-package Books
-
-import Spices.SimpleSpice
-import Spices.Spice
-import Spices.makeSalt
+package books
 
 fun main(args: Array<String>)
 {
