@@ -1,5 +1,7 @@
 package books
 
+import kotlin.random.Random
+
 const val MAXIMUM_NUMBER_OF_BOOKS = 10
 
 object Constants
@@ -44,6 +46,14 @@ fun main(args: Array<String>)
     println(moreBooks)
 
     book.printUrl()
+
+    val puppy = Puppy()
+    println("${book.pages} pages in book to start with")
+    while (book.pages > 0)
+    {
+        puppy.playWithBook(book)
+        println("${book.pages} pages left in book")
+    }
 }
 
 open class Book(val title: String = "Oliver Twist", val author: String = "Charles Dickens", val year: Int = 1839, var pages: Int = 500)
@@ -91,10 +101,19 @@ class eBook(val format: String = "text") : Book()
     }
 }
 
-//2.1 grams per page
-fun Book.weight(): Double = pages*2.1
+//1.5 grams per page
+fun Book.weight(): Double = pages*1.5
 
 fun Book.tornPages(torn: Int): Int {
-    pages -= torn
+    if (pages >= torn) pages -= torn
+    else pages = 0
     return pages
+}
+
+class Puppy()
+{
+    fun playWithBook(book: Book)
+    {
+        book.tornPages(Random.nextInt(50))
+    }
 }
