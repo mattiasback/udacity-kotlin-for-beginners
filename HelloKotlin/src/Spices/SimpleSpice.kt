@@ -1,5 +1,8 @@
 package spices
 
+import java.util.*
+import helpers.*
+
 fun main(args: Array<String>)
 {
     var spice = SimpleSpice()
@@ -18,13 +21,22 @@ fun main(args: Array<String>)
     val spicy = spices.filter { s -> s.heat > 5 }
     val lessSpicy = spices.filter { s -> s.heat <= 5 }
 
-    for (spice in spicy)
+    var spicesReversedCustomBad = reverseListBad(spices)
+    for (spice in spicesReversedCustomBad)
     {
-        println("SPICY " + spice.stringRepresentation())
+        println("BAD SPICY " + spice.stringRepresentation())
     }
-    for (spice in lessSpicy)
+
+    var spicesReversedCustomGood = reverseListGood(spices)
+    for (spice in spicesReversedCustomGood)
     {
-        println("LESS SPICY " + spice.stringRepresentation())
+        println("GOOD SPICY " + spice.stringRepresentation())
+    }
+
+    var spiceReversedCustomBest = reverseListBest(spices)
+    for (spice in spiceReversedCustomBest)
+    {
+        println("BEST SPICY " + spice.stringRepresentation())
     }
 }
 
