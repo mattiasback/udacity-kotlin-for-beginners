@@ -36,7 +36,7 @@ fun main(args: Array<String>)
 
     var library = mapOf("Charles Dickens" to allBooks)
 
-    val isOliverTwistReturned = library.any { author -> author.value.any { book -> book.title == "Oliver Twist" } }
+    val isOliverTwistReturned = library.any { a -> a.value.any { book -> book.title == "Oliver Twist" } }
     println("Oliver Twist is returned: $isOliverTwistReturned")
 
     var moreBooks = mutableMapOf("Shakespeare" to "Hamlet")
